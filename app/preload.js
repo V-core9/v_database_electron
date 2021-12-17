@@ -29,21 +29,6 @@ v_page = async () => {
     await types();
 };
 
-window.addEventListener('DOMContentLoaded', async () => {
-    await v_page();
-});
-
-window.addEventListener('click', async (e) => {
-
-
-    if (e.target.getAttribute('action') === 'new_type_form') await newTypeForm();
-
-    if (e.target.getAttribute('action') === 'new_type') await newType();
-
-    if (e.target.tagName === 'TYPE') await items(e);
-
-});
-
 newModal = async (data) => {
     document.querySelector("explorer").innerHTML += `<v_modal>${data}</v_modal>`;
 };
@@ -92,9 +77,11 @@ const explorer = {
     content: async () => {
         return `<content></content>`;
     },
+
     footer: async () => {
         return `<footer></footer>`;
     },
+    
     render: async () => {
         return `
         <explorer>
@@ -109,3 +96,12 @@ const explorer = {
 };
 
 
+window.addEventListener('DOMContentLoaded', async () => {
+    await v_page();
+});
+
+window.addEventListener('click', async (e) => {
+    if (e.target.getAttribute('action') === 'new_type_form') await newTypeForm();
+    if (e.target.getAttribute('action') === 'new_type') await newType();
+    if (e.target.tagName === 'TYPE') await items(e);
+});
