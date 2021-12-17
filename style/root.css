@@ -1,9 +1,26 @@
+[type='warn'] {
+    background: #607d8b;
+}
+
+[type='error'] {
+    background: #13303e;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     line-height: 1;
     font-family: monospace;
     color: white;
+    transition: 0.25s linear all;
+}
+navigation {
+    background: #0e1724;
+}
+
+header {
+    padding: 0.5em 1em;
 }
 
 v_page {
@@ -14,4 +31,158 @@ v_page {
     left: 0;
     overflow: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+
+input {
+    padding: 0.5em 1em;
+    color: black;
+}
+
+
+v_btn {
+    background: #607d8b;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+v_btn:hover {
+    background: #2196F3;
+    padding: 0.5em 1em;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+new_type_form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #607d8b;
+    margin: 1em;
+    box-shadow: 0 5px 10px black;
+    background: #ffffff14;
+}
+
+new_type_form content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+new_type_form content input {
+    flex: 1;
+}
+
+type_list {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    border: 1px solid #607d8b;
+}
+
+content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 1em;
+}
+
+explorer > header {
+    padding: 0.5em 1em;
+    background: #162336;
+}
+
+type {
+    font-size: 14px;
+    padding: 0.5em 0.75em;
+    text-shadow: 0 5px black;
+    border-left: 3px solid #607D8B;
+    box-shadow: 0 0px 5px rgb(255 255 255 / .1);
+}
+
+type:hover {
+    padding: 0.5em 0.75em;
+    background: #607d8b36;
+    cursor: pointer;
+    transform:scale(1.01);
+    text-shadow: 0 0 5px black;
+    border-left: 5px solid #03A9F4;
+    color: #03A9F4;
+    box-shadow: 0 5px 10px rgb(255 255 255 / .1);
+}
+
+editor {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+explorer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+footer {
+    min-height: 50px;
+    background: #0000005c;
+}
+
+editor > content {
+    display: flex;
+    flex: 1;
+    box-shadow: 0 0 50px inset #0f1c26;
+    background: linear-gradient(225deg, #09222e, transparent);
+    flex-direction: column;
+    gap: 0.5em;
+    padding: 0;
+}
+
+
+
+editor > content content item {
+    background: #1a2a39;
+    padding: .5em 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+editor > content content item name {
+    padding: 1em;
+}
+
+
+
+editor > content content item actions v_btn {
+    padding: 0.35em;
+    border: none;
+    box-shadow: 0 0 5px black;
+}
+
+editor > content content item actions {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 0 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+editor > content content item:hover{
+    background : #03a9f45e;
+    cursor: pointer;
+}
+editor > content content item name:hover{
+    color : #03A9F4;
+    cursor: pointer;
 }

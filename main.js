@@ -14,7 +14,7 @@ function createWindow() {
         acceptFirstMouse: true,
         backgroundColor: '#102030',
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'app/preload.js')
         }
     });
     
