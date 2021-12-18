@@ -1,10 +1,11 @@
-const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const { app, BrowserWindow } = require('electron');
 
-function createWindow() {
+
+createWindow = async() => {
     const win = new BrowserWindow({
         //titleBarStyle: 'hidden',
-        title: "MyDemo Electron App",
+        title: "V_Database Beta_v1",
         autoHideMenuBar: true,
         menuBarVisible: false,
         darkTheme: true,
@@ -14,26 +15,24 @@ function createWindow() {
         acceptFirstMouse: true,
         backgroundColor: '#102030',
         webPreferences: {
-            preload: path.join(__dirname, 'app/preload.js')
+            preload: path.join(__dirname, 'source/app/preload.js')
         }
     });
-    
-    //win.maximize();
 
-    win.loadFile('index.html');
-}
+    win.loadFile('./source/app.html');
+};
 
-app.whenReady().then(() => {
-    createWindow();
+app.whenReady().then(async () => {
+    await createWindow();
 
-    app.on('activate', () => {
+    app.on('activate', async () => {
         if (BrowserWindow.getAllWindows().length === 0) {
-            createWindow();
+            await  createWindow();
         }
     });
 });
 
-app.on('window-all-closed', () => {
+app.on('window-all-closed', async () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }

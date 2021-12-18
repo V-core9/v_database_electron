@@ -6,6 +6,9 @@
     background: #13303e;
 }
 
+[type='success'] {
+    background: #133e30;
+}
 
 * {
     margin: 0;
@@ -15,12 +18,18 @@
     color: white;
     transition: 0.25s linear all;
 }
+
 navigation {
     background: #0e1724;
+    overflow: auto;
 }
 
 header {
     padding: 0.5em 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 v_page {
@@ -29,25 +38,25 @@ v_page {
     position: fixed;
     top: 0;
     left: 0;
-    overflow: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1em;
 }
-
 
 input {
     padding: 0.5em 1em;
     color: black;
 }
 
-
 v_btn {
     background: #607d8b;
     padding: 0.5em 1em;
     font-size: 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
 }
 
 v_btn:hover {
@@ -57,14 +66,12 @@ v_btn:hover {
     cursor: pointer;
 }
 
-
 new_type_form {
     display: flex;
     flex-direction: column;
     border: 1px solid #607d8b;
-    margin: 1em;
     box-shadow: 0 5px 10px black;
-    background: #ffffff14;
+    background: #13303e;
 }
 
 new_type_form content {
@@ -109,7 +116,7 @@ type:hover {
     padding: 0.5em 0.75em;
     background: #607d8b36;
     cursor: pointer;
-    transform:scale(1.01);
+    transform: scale(1.01);
     text-shadow: 0 0 5px black;
     border-left: 5px solid #03A9F4;
     color: #03A9F4;
@@ -120,12 +127,15 @@ editor {
     display: flex;
     flex-direction: row;
     flex: 1;
+    overflow: hidden;
 }
 
 explorer {
     display: flex;
     flex-direction: column;
     flex: 1;
+    height: 100%;
+    overflow: hidden;
 }
 
 footer {
@@ -141,27 +151,23 @@ editor > content {
     flex-direction: column;
     gap: 0.5em;
     padding: 0;
+    overflow: auto;
 }
-
-
 
 editor > content content item {
     background: #1a2a39;
     padding: .5em 1em;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0;
     overflow: hidden;
 }
 
-
 editor > content content item name {
     padding: 1em;
+    flex: 1;
 }
-
-
 
 editor > content content item actions v_btn {
     padding: 0.35em;
@@ -178,11 +184,97 @@ editor > content content item actions {
     justify-content: center;
 }
 
-editor > content content item:hover{
+editor > content content item:hover {
     background : #03a9f45e;
     cursor: pointer;
 }
-editor > content content item name:hover{
+
+editor > content content item name:hover {
     color : #03A9F4;
     cursor: pointer;
+}
+
+editor item {
+    display: flex;
+    flex-direction: column;
+}
+
+editor item header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
+}
+
+editor item content {
+    padding: 0;
+}
+
+
+
+v_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #00000014;
+    align-items: center;
+    justify-content: center;
+}
+
+
+overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    box-shadow: 0 0 10vw black inset;
+    background: linear-gradient(45deg, #13303e, transparent);
+}
+
+inner {
+    z-index: 50;
+    position: relative;
+    box-shadow: 0 0 10vw black;
+    background: #0d1722;
+    border: 1px solid #607d8b;
+}
+
+v_btn[action='remove_modal'] {
+    position: absolute;
+}
+
+v_btn[action='remove_modal'][position='tr'] {
+    top: 0;
+    right: 0;
+}
+
+v_btn[action='remove_modal']:hover {
+    background: #13303e;
+    color: #2196f3;
+    box-shadow: 0 0 5px 5px #2196f3 inset;
+}
+
+
+v_modal header {
+    background: #0f242f;
+}
+
+
+content block {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+textarea, input {
+    color: black;
+    white-space: nowrap;
 }
