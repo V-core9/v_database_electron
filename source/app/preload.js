@@ -122,6 +122,7 @@ v_page = async () => {
 remove_modal = async (e) => {
     document.querySelector('v_modal').remove();
 };
+
 modal = async (data, options = {overlay_close: true, close_btn: true, close_btn_pos: "tr"}) => {
     var {overlay_close, close_btn, close_btn_pos} = options;
     document.querySelector("explorer").innerHTML += `<v_modal><overlay ${(overlay_close===true)? "action='remove_modal'" : ''}></overlay><inner>${(close_btn === true)?'<v_btn action="remove_modal" position="'+close_btn_pos+'">X</v_btn>':''}${data}</inner></v_modal>`;
@@ -175,8 +176,6 @@ const explorer = {
     }
 };
 
-
-
 const actions = {
     new_type_form,
     new_type,
@@ -187,8 +186,6 @@ const actions = {
     remove_modal,
     delete_item
 };
-
-
 
 window.addEventListener('click', async (e) => {
     var action = e.target.getAttribute('action');
